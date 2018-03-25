@@ -3,49 +3,41 @@ package com.erojas.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
-@Entity(name="alumno")
-@Table(name="alumno")
-public class Alumno implements Serializable{
+@Entity(name = "profesor")
+@Table(name = "profesor")
+public class Profesor implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer id;
-	@Column(name="nombre")
+	@Column(name = "nombre")
 	private String nombre;
-	@Column(name="apellidos")
+	@Column(name = "apellidos")
 	private String apellidos;
-	@Column(name="sexo")
+	@Column(name = "sexo")
 	private String sexo;
-	@Column(name="email")
+	@Column(name = "email")
 	private String email;
-	@Column(name="direccion")
+	@Column(name = "direccion")
 	private String direccion;
 
-	@Column(name="foto")
+	@Column(name = "foto")
 	private byte[] foto;
-	
-	@Column(name="fechaNacimiento")
+
+	@Column(name = "fechaNacimiento")
 	private LocalDate fechaNacimiento;
-	//Relations
-	@OneToOne(mappedBy="alumno", cascade=CascadeType.ALL)
-	private Usuario usuario;
 
 	// Methods
 	public String nombreCompleto() {
@@ -53,41 +45,31 @@ public class Alumno implements Serializable{
 		sb.append(apellidos).append(" , ").append(nombre);
 		return sb.toString();
 	}
-	
-	// Getter and setters
-	
+
+	// Getter and setter
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getApellidos() {
 		return apellidos;
 	}
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-	public String getDireccion() {
-		return direccion;
-	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 
 	public String getSexo() {
 		return sexo;
@@ -95,6 +77,22 @@ public class Alumno implements Serializable{
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 
 	public byte[] getFoto() {
@@ -113,13 +111,4 @@ public class Alumno implements Serializable{
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	
-	
 }

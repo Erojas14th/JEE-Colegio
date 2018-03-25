@@ -12,7 +12,15 @@
 <body class="resolucion">
 
 	<ui:insert name="header">
-cabecera
+		<h:form>
+			<p:menubar>
+				<p:menuitem value="Home" action="indexUsuario?facet-redirect=true"/>
+				<p:submenu label="Perfil">
+				<p:menuitem value="Mi Perfil" />
+				</p:submenu>
+				<p:menuitem value="Salir"  action="/login?facet-redirect=true" />
+			</p:menubar>
+		</h:form>
 	</ui:insert>
 
 	<ui:insert name="content">
@@ -20,7 +28,7 @@ cabecera
 	</ui:insert>
 
 	<ui:insert name="footer">
-		pie de pagina
+		pie de usuarios
 	</ui:insert>
 
 

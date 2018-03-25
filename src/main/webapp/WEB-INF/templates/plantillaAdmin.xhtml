@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title><ui:insert name="title">Gestor de Alumnos</ui:insert></title>
+	<h:outputScript name="calendar.js" library="js" />
+	
+	
+</h:head>
+
+<body >
+
+	<ui:insert name="header" >
+		<h:form>
+			<p:menubar >
+				<p:menuitem  value="Home" action="indexAdmin?facet-redirect=true" />
+				<p:submenu label="Actualizar Datos">
+					<p:menuitem value="Alumnos" action="alumno/alumnoActualizacion?facet-redirect=true"/>
+					<p:menuitem value="Profesores"  />
+					<p:menuitem value="Notas" />
+					<p:menuitem value="Cursos" />
+					<p:menuitem value="Horarios" />
+				</p:submenu>
+				
+				
+				<p:menuitem value="Salir"  action="/login?facet-redirect=true" />
+			</p:menubar>
+		</h:form>
+	</ui:insert>
+
+	<ui:insert name="content">
+
+	</ui:insert>
+
+	<ui:insert name="footer">
+		pie de admin
+	</ui:insert>
+
+
+</body>
+
+</html>

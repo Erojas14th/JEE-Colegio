@@ -13,10 +13,10 @@
 
 </h:head>
 
-<h:body>
+<h:body >
 
 	<!--  Utilizacion de la plantilla -->
-	<ui:composition template="/WEB-INF/templates/plantilla.xhtml">
+	<ui:composition template="/WEB-INF/templates/plantillaAdmin.xhtml">
 		<!--  Definicion del contenido -->
 		<ui:define name="content">
 			<h:form id="frm" enctype="multipart/form-data">
@@ -70,6 +70,9 @@
 					</p:column>
 
 					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Editar" />
+						</f:facet>
 						<p:commandLink actionListener="#{alumnoBean.seleccionar(e)}"
 							oncomplete="PF('wdlgRegistrar').show();"
 							update="frm:dlgRegistrar">
@@ -77,7 +80,16 @@
 						</p:commandLink>
 					</p:column>
 
+					<p:column>
+						<f:facet name="header">
+							<p:outputLabel value="Eliminar" />
+						</f:facet>
+						<p:commandLink actionListener="#{alumnoBean.eliminar(e)}">
+						<p:graphicImage name="close.png" library="images" />
+						</p:commandLink>
+					</p:column>
 				</p:dataTable>
+
 
 
 
@@ -97,6 +109,8 @@
 
 							<p:outputLabel value="Nombre : " />
 							<p:inputText value="#{alumnoBean.alumno.nombre}" />
+
+
 
 							<p:outputLabel value="Apellidos : " />
 							<p:inputText value="#{alumnoBean.alumno.apellidos}" />

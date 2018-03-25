@@ -100,6 +100,15 @@ public class AlumnoBean implements Serializable {
 		this.fechaSeleccionada = cal.getTime();
 
 	}
+	
+	public void eliminar(Alumno alu) {
+		try {
+			as.eliminar(alu);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	// Getters and setters
 
 	public Alumno getAlumno() {

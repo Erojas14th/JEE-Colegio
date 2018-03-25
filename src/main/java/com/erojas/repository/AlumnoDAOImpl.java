@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -26,7 +25,7 @@ public class AlumnoDAOImpl implements AlumnoDAO {
 	@Override
 	public void modificar(Alumno t) throws Exception {
 				if(t.getFoto() != null && t.getFoto().length > 0){
-			Query query = em.createQuery("UPDATE persona SET foto = ?1 WHERE id = ?2");
+			Query query = em.createQuery("UPDATE alumno SET foto = ?1 WHERE id = ?2");
 			query.setParameter(1, t.getFoto());
 			query.setParameter(2, t.getId());
 			query.executeUpdate();
